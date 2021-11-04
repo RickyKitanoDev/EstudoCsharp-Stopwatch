@@ -22,13 +22,7 @@ namespace Stopwatch
             char type = char.Parse(data.Substring(data.Length - 1, 1));
             int time = int.Parse(data.Substring(0, data.Length - 1));
             int multiplier = 1;
-
-            if (type != 's' || type != 'm')
-            {
-                Console.WriteLine("Digite s(segundos) ou m(minutos)");
-                Menu();
-            }
-
+           
             if (time == 0)
             {
                 System.Environment.Exit(0);
@@ -43,11 +37,7 @@ namespace Stopwatch
             {
                 multiplier = 60;
                 PreStart(time * multiplier);
-            }
-
-            
-            
-
+            }                        
         }
 
         static void PreStart(int time)
@@ -72,8 +62,8 @@ namespace Stopwatch
                 Console.Clear();
                 currentTime++;
                 Console.WriteLine(currentTime);
-                //Thread.Sleep(1000);
-                Thread.Sleep(100);
+                Thread.Sleep(1000);
+                //Thread.Sleep(100);
             }
 
             Console.Clear();
